@@ -3,7 +3,12 @@ var wallL,wallR,wallU,wallD;
 var wallL2,wallR2,wallU2,wallD2;
 
 var red1,red2,edges;
-var blue1,blue2,blue3,blue4,blue5;
+var green1,green2,green3,green4,green5;
+
+function preload(){
+  image1=loadImage("images/redCircle.png");
+  image2=loadImage("images/greenCircle.png");
+}
 
 function setup() {  
 
@@ -15,30 +20,44 @@ function setup() {
   home2=createSprite(400,400,210,150);
   home2.scale=1.15;
 
-  red1=createSprite(25,380,35,35);  
+  red1=createSprite(25,380,25,25);  
   red1.shapeColor = color("red");
+  red1.addImage(image1);
+  red1.scale=0.06;
   red1.velocity.y = 5;
   red1.velocity.x =2;
 
-  red2=createSprite(350, 380, 35, 35  );  
+  red2=createSprite(350, 380, 25, 25);  
   red2.shapeColor = color("red");
+  red2.addImage(image1);
+  red2.scale=0.06;
   red2.velocity.y = 5;
   red2.velocity.x =2;
 
-  blue1=createSprite(320, 120, 35, 35  );  
-  blue1.shapeColor = color("green");
+  green1=createSprite(320, 120, 25, 25);  
+  green1.shapeColor = color("green");
+  green1.addImage(image2);
+  green1.scale=0.06;
   
-  blue2=createSprite(100, 200, 35, 35  );  
-  blue2.shapeColor = color("green");
+  green2=createSprite(100, 200, 25,25 );  
+  green2.shapeColor = color("green");
+  green2.addImage(image2);
+  green2.scale=0.06;
 
-  blue3=createSprite(60, 60, 35, 35  );  
-  blue3.shapeColor = color("green");
+  green3=createSprite(60, 60, 25, 25  );  
+  green3.shapeColor = color("green");
+  green3.addImage(image2);
+  green3.scale=0.06;
 
-  blue4=createSprite(250, 70, 35, 35  );  
-  blue4.shapeColor = color("green");
+  green4=createSprite(250, 70, 25, 25  );  
+  green4.shapeColor = color("green");
+  green4.addImage(image2);
+  green4.scale=0.06;
 
-  blue5=createSprite(330, 230, 35, 35  );  
-  blue5.shapeColor = color("green");
+  green5=createSprite(330, 230, 25, 25  );  
+  green5.shapeColor = color("green");
+  green5.addImage(image2);
+  green5.scale=0.06;
 
   wallL=createSprite(1,400,9,175);
   wallL.shapeColor=color("white");
@@ -84,55 +103,71 @@ function draw() {
   red2.bounceOff(wallU);
   red2.bounceOff(wallR);
 
-  blue1.bounceOff(wallU2);
-  blue1.bounceOff(wallR2);
-  blue1.bounceOff(wallU);
-  blue1.bounceOff(wallR);
+  green1.bounceOff(wallU2);
+  green1.bounceOff(wallR2);
+  green1.bounceOff(wallL2);
+  green1.bounceOff(wallD2);
+  green1.bounceOff(wallU);
+  green1.bounceOff(wallR);
 
-  blue2.bounceOff(wallU2);
-  blue2.bounceOff(wallR2);
-  blue2.bounceOff(wallU);
-  blue2.bounceOff(wallR);
+  green2.bounceOff(wallU2);
+  green2.bounceOff(wallR2);
+  green2.bounceOff(wallL2);
+  green2.bounceOff(wallD2);
+  green2.bounceOff(wallU);
+  green2.bounceOff(wallR);
 
-  blue3.bounceOff(wallU2);
-  blue3.bounceOff(wallR2);
-  blue3.bounceOff(wallU);
-  blue3.bounceOff(wallR);
+  green3.bounceOff(wallU2);
+  green3.bounceOff(wallR2);
+  green3.bounceOff(wallL2);
+  green3.bounceOff(wallD2);
+  green3.bounceOff(wallU);
+  green3.bounceOff(wallR);
 
-  blue4.bounceOff(wallU2);
-  blue4.bounceOff(wallR2);
-  blue4.bounceOff(wallU);
-  blue4.bounceOff(wallR);
+  green4.bounceOff(wallU2);
+  green4.bounceOff(wallR2);
+  green4.bounceOff(wallL2);
+  green4.bounceOff(wallD2);
+  green4.bounceOff(wallU);
+  green4.bounceOff(wallR);
 
-  blue5.bounceOff(wallU2);
-  blue5.bounceOff(wallR2);
-  blue5.bounceOff(wallU);
-  blue5.bounceOff(wallR);
+  green5.bounceOff(wallU2);
+  green5.bounceOff(wallR2);
+  green5.bounceOff(wallL2);
+  green5.bounceOff(wallD2);
+  green5.bounceOff(wallU);
+  green5.bounceOff(wallR);
   
   red2.bounceOff(edges);
-  blue1.bounceOff(edges);
-  blue2.bounceOff(edges);
-  blue3.bounceOff(edges);
-  blue4.bounceOff(edges);
-  blue5.bounceOff(edges);
+  green1.bounceOff(edges);
+  green2.bounceOff(edges);
+  green3.bounceOff(edges);
+  green4.bounceOff(edges);
+  green5.bounceOff(edges);
 
   strikeFnct();
 }
  
 function strikeFnct(){
-  if(blue1.bounce(red2)|| blue1.bounce(blue2)|| blue1.bounce(blue3)|| blue1.bounce(blue4)|| blue1.bounce(blue5)){
-  blue1.shapeColor = color("red");
+  if(green1.bounce(red2)|| green1.bounce(green2)|| green1.bounce(green3)|| green1.bounce(green4)|| green1.bounce(green5)){
+  green1.addImage(image1);
   }
-  if(blue2.bounce(red2)|| blue2.bounce(blue1)|| blue2.bounce(blue3)|| blue2.bounce(blue4)|| blue2.bounce(blue5)){
-    blue2.shapeColor = color("red");
+  if(green2.bounce(red2)|| green2.bounce(green1)|| green2.bounce(green3)|| green2.bounce(green4)|| green2.bounce(green5)){
+    green2.addImage(image1);
+
   }
-  if(blue3.bounce(red2)|| blue3.bounce(blue1)|| blue3.bounce(blue2)|| blue3.bounce(blue4)|| blue3.bounce(blue5)){
-    blue3.shapeColor = color("red");
+  if(green3.bounce(red2)|| green3.bounce(green1)|| green3.bounce(green2)|| green3.bounce(green4)|| green3.bounce(green5)){
+    green3.addImage(image1);
+
   }
-  if(blue4.bounce(red2)|| blue4.bounce(blue1)|| blue4.bounce(blue2)|| blue4.bounce(blue3)|| blue4.bounce(blue5)){
-    blue4.shapeColor = color("red");
+  if(green4.bounce(red2)|| green4.bounce(green1)|| green4.bounce(green2)|| green4.bounce(green3)|| green4.bounce(green5)){
+    green4.addImage(image1);
+
   }
-  if(blue5.bounce(red2)|| blue5.bounce(blue1)|| blue5.bounce(blue2)|| blue5.bounce(blue3)|| blue5.bounce(blue4)){
-    blue5.shapeColor = color("red");
+  if(green5.bounce(red2)|| green5.bounce(green1)|| green5.bounce(green2)|| green5.bounce(green3)|| green5.bounce(green4)){
+    green5.addImage(image1);
+    green5.velocity.x=3;
+    green5.velocity.y=5;
+
   }
 }

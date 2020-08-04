@@ -22,7 +22,7 @@ function setup() {
 
   red1=createSprite(25,380,25,25);  
   red1.shapeColor = color("red");
-  red1.addImage(image1);
+  red1.addImage(image2);
   red1.scale=0.06;
   red1.velocity.y = 5;
   red1.velocity.x =2;
